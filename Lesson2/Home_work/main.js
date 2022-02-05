@@ -13,7 +13,7 @@ if (time < 16) {
 }
 
 // - У змінній day дано якесь число від 1 до 31. Потрібно визначити, у яку половину(декаду) місяця потрапляє це число (у першу, другу чи третю).
-let day = Math.floor(Math.random() * 31+1)
+let day = Math.floor(Math.random() * 31 + 1)
 console.log(day)
 if (day < 11) {
     console.log('1 декада')
@@ -26,9 +26,9 @@ if (day < 11) {
 // - У нас є змінна test, якщо дорівнює true, виведіть 'Вірно', інакше виведіть 'Неправильно'.
 //     Перевірте роботу скрипта при test, що дорівнює true, false. Напишіть два варіанти скрипта - з коротким записом(тернаркою)
 let test = undefined //true
-if (test === true){
+if (test === true) {
     console.log('RIGHT')
-}else{
+} else {
     console.log('WRONG')
 }
 
@@ -36,16 +36,16 @@ if (test === true){
 let a = 1
 // let a = 0
 // let a = -3
-if (a !== 0){
+if (a !== 0) {
     console.log('RIGTH')
-}else {
+} else {
     console.log('WRONG')
 }
 
 // - Скласти розклад на тиждень за домопоги switch. Користувач вводить порядковий номер дня тижня і на екрані відображається інфа що заплановано на цей день.
 
 // let dayOfTheWeek = prompt('What day interested?')
-// switch (dayOfTheWeek){
+// switch (dayOfTheWeek) {
 //     case '1':
 //         document.write('OKTEN WEBinar');
 //         break;
@@ -67,6 +67,9 @@ if (a !== 0){
 //     case '7':
 //         document.write('no tasks');
 //         break;
+//     default :
+//         console.log('Wrong number');
+//         break;
 // }
 
 // - Потрібно визначити Високосний рік чи ні. Високосні роки діляться націло на 4.
@@ -83,8 +86,8 @@ if (a !== 0){
 // - Використовуючи конструкцію if..else, напишіть код, який запитуватиме: „Яка «офіційна» назва JavaScript?“
 // Якщо користувач вводить «ECMAScript», то показати: «Правильно!», інакше – відобразити: «Не знаєте? ECMAScript!
 let nameJs = prompt('Official name of JavaScript?')
-if (nameJs === 'ECMAScript'){
+if (nameJs === 'ECMAScript') {
     console.log('Right!')
-}else {
+} else {
     console.log('Dont know? ECMAScript')
 }
