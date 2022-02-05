@@ -1,0 +1,16 @@
+body{
+    display: grid;
+    grid-template-columns: repeat(2,50%);
+}
+
+.card{
+    margin: 10px;
+    background: olivedrab;
+    width: 500px;
+    justify-content: center;
+    padding: 10px;
+    font-size: 20px;
+    color: yellow;
+    border-radius: 10px;
+    cursor: pointer;
+}

@@ -140,7 +140,8 @@
 // }
 // console.log(arr13)
 
-// - Дано 2 масиви з рівною кількістю об'єктів.
+
+// - Дано 2 масиви з рівною кількістю об'єктів.    -   ???????
 // Масиви:
 //     let usersWithId = [
 //         {id: 1, name: 'vasya', age: 31, status: false},
@@ -172,33 +173,83 @@
 //                 }
 //             },
 //             // TO BE CONTINUED .....
-//         ]
+//         ]    - ???????
 
-let users = [
-    {id: 1, name: 'vasya', age: 31, status: false},
-    {id: 2, name: 'petya', age: 30, status: true},
-    {id: 3, name: 'kolya', age: 29, status: true},
-    {id: 4, name: 'olya', age: 28, status: false}
-];
+// let users = [
+//     {id: 1, name: 'vasya', age: 31, status: false},
+//     {id: 2, name: 'petya', age: 30, status: true},
+//     {id: 3, name: 'kolya', age: 29, status: true},
+//     {id: 4, name: 'olya', age: 28, status: false}
+// ];
+//
+// let cities = [
+//     {user_id: 3, country: 'USA', city: 'Portland'},
+//     {user_id: 1, country: 'Ukraine', city: 'Ternopil'},
+//     {user_id: 2, country: 'Poland', city: 'Krakow'},
+//     {user_id: 4, country: 'USA', city: 'Miami'}
+// ];
+//
+// let usersWithCities = []
+// for (i1 = 0; i1 < users.length; i1++) {
+//     for (i = 0; i < users.length; i++) {
+//         if (users[i1].id === cities[i].user_id) {
+//             usersWithCities[i1] = users[i1]
+//             usersWithCities[i1].adress = cities[i]
+//         }
+//     }
+// }
+// console.log(usersWithCities)
 
-let cities = [
-    {user_id: 3, country: 'USA', city: 'Portland'},
-    {user_id: 1, country: 'Ukraine', city: 'Ternopil'},
-    {user_id: 2, country: 'Poland', city: 'Krakow'},
-    {user_id: 4, country: 'USA', city: 'Miami'}
-];
-let usersWithCities = []
-let adress = [cities[1].country, cities[1].city]
-usersWithCities[0].id = users[0].id
-usersWithCities[0].adress = adress
-
-console.log(usersWithCities)
 
 //         - Взяти масив з 10 чисел або створити його. Вивести в консоль тільки ті елементи, значення яких є парними.
-//
+
+// let arr14 = []
+// for (i = 0; i < 10; i++) {
+//     x = Math.floor(Math.random() * 100)
+//     arr14[i] = x
+//     if (x % 2 === 0) {
+//         console.log(x)
+//     }
+// }
+// console.log(arr14)
+
 // - Взяти масив з 10 чисел або створити його. Створити 2й порожній масив. За допомогою будь-якого циклу скопіювати значення одного масиву в інший.
+
+// let arr15 = []
+// for (i = 0; i < 10; i++) {
+//     x = Math.floor(Math.random() * 100)
+//     arr15[i] = x
+// }
+// let arr16 = []
+// for (i = 0; i < 10; i++) {
+//     arr16[i] = arr15[i]
+// }
+// console.log(arr15)
+// console.log(arr16)
+
+// // - Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу for зібрати всі букви в слово.
+// let arr17 = ['a', 'b', 'c']
+// slovo1 = ''
+// for (i = 0; i < arr17.length; i++) {
+//     slovo1 += arr17[i]
+// }
+// console.log(slovo1)
 //
+// // - Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу while зібрати всі букви в слово.
+// let arr18 = ['a', 'b', 'c']
+// slovo2 = ''
+// i=0
+// while (i < arr18.length){
+//     slovo2 += arr18[i]
+//     i++
+// }
+// console.log(slovo2)
 //
-// - Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу for зібрати всі букви в слово.
-// - Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу while зібрати всі букви в слово.
-// - Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу for of зібрати всі букви в слово.
+// // - Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу for of зібрати всі букви в слово.
+//
+// let arr19 = ['a', 'b', 'c']
+// slovo3 = ''
+// for (const i of arr19) {
+//     slovo3 += i
+// }
+// console.log(slovo3)
