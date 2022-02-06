@@ -1,0 +1,13 @@
+body{
+    display: grid;
+    grid-template-columns: repeat(5, 340px);
+}
+.card{
+    width: 300px;
+    background: wheat;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    color: darkgreen;
+    cursor: pointer;
+}

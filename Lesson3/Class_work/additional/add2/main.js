@@ -239,8 +239,16 @@ let usersList = [
 
 for (i = 0; i < usersList.length; i++) {
     document.write('<div class="card">')
-    for (let card in usersList[i]) {
-        document.write('<div>', card, ' - ', usersList[i][card], '<br></div>')
+    for (let usersListElementKey in usersList[i]) {
+        if ((usersListElementKey !== 'address') && (usersListElementKey !== 'company')) {
+            document.write(`<div> ${usersListElementKey} - ${usersList[i][usersListElementKey]} <br></div>`)
+        // debugger;
+        }
+        // else if (usersListElementKey === 'address'){
+        //     for (let address of usersListElementKey) {
+        //         document.write(`<div> ${usersListElementKey} - ${usersListElementKey[address]} <br></div>`)
+        //     }
+        // }
     }
     document.write('</div>')
 }
