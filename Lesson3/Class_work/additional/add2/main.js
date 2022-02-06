@@ -242,13 +242,19 @@ for (i = 0; i < usersList.length; i++) {
     for (let usersListElementKey in usersList[i]) {
         if ((usersListElementKey !== 'address') && (usersListElementKey !== 'company')) {
             document.write(`<div> ${usersListElementKey} - ${usersList[i][usersListElementKey]} <br></div>`)
-        // debugger;
+        } else if (usersListElementKey === 'address') {
+            for (let j = 0; j < usersListElementKey.length; j++) {
+                for (let usersListElementKeyElementKey in usersListElementKey[j]) {
+                    document.write(`<div> ${usersListElementKeyElementKey} - ${usersListElementKey[j][usersListElementKeyElementKey]} <br></div>`)
+                }
+            }
+        }else if (usersListElementKey === 'company') {
+            for (let j = 0; j < usersList[i][usersListElementKey].length; j++) {
+                for (let usersListElementKeyElementKey in usersList[i][usersListElementKey][j]) {
+                    document.write(`<div> ${usersListElementKeyElementKey} - ${usersList[i][usersListElementKey][j][usersListElementKeyElementKey]} <br></div>`)
+                }
+            }
         }
-        // else if (usersListElementKey === 'address'){
-        //     for (let address of usersListElementKey) {
-        //         document.write(`<div> ${usersListElementKey} - ${usersListElementKey[address]} <br></div>`)
-        //     }
-        // }
     }
     document.write('</div>')
 }
