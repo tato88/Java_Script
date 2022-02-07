@@ -14,3 +14,9 @@ body{
     border-radius: 10px;
     cursor: pointer;
 }
+.pad_lef40{
+    padding-left: 40px;
+}
+.pad_lef70{
+    padding-left: 70px;
+}

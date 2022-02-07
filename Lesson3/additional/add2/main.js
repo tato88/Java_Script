@@ -243,19 +243,22 @@ for (let i = 0; i < usersList.length; i++) {
         if ((elementUserList !== 'address') && (elementUserList !== 'company')) {
             document.write(`<div> ${elementUserList} - ${usersList[i][elementUserList]} <br></div>`)
         } else if (elementUserList === 'address') {
+            document.write('address:')
             for (let elementAddress in usersList[i][elementUserList]) {
                 if (elementAddress !== 'geo') {
-                    document.write(`<div> ${elementAddress} - ${usersList[i][elementUserList][elementAddress]} <br></div>`)
+                    document.write(`<div class="pad_lef40"> ${elementAddress} - ${usersList[i][elementUserList][elementAddress]} <br></div>`)
                 } else if (elementAddress === 'geo') {
+                    document.write(`<div class="pad_lef40">geo:</div>`)
                     for (let elementGeo in usersList[i][elementUserList][elementAddress]) {
-                        document.write(`<div> ${elementGeo} - ${usersList[i][elementUserList][elementAddress][elementGeo]} <br></div>`)
+                        document.write(`<div class="pad_lef70"> ${elementGeo} - ${usersList[i][elementUserList][elementAddress][elementGeo]} <br></div>`)
                     }
                 }
             }
 
         } else if (elementUserList === 'company') {
+            document.write('company:')
             for (let elementCompany in usersList[i][elementUserList]) {
-                document.write(`<div> ${elementCompany} - ${usersList[i][elementUserList][elementCompany]} <br></div>`)
+                document.write(`<div class="pad_lef40">${elementCompany} - ${usersList[i][elementUserList][elementCompany]} <br></div>`)
             }
         }
     }
