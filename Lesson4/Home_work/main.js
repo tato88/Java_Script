@@ -79,8 +79,6 @@ listForArr(['adsasd', 3, true, 5])
 let arr1 = [{id: 1, name: 'andrii', age: 33}, {id: 2, name: 'orest', age: 23}, {id: 3, name: 'igor', age: 43}]
 
 function cardArr1(array) {
-    for (const arrayElement of array) {
-        document.write(`<div>${arrayElement.id}. ${arrayElement.name} - ${arrayElement.age}</div>`)
-    }
+    for (const arrayElement of array) document.write(`<div>${arrayElement.id}. ${arrayElement.name} - ${arrayElement.age}</div>`)
 }
 cardArr1(arr1)

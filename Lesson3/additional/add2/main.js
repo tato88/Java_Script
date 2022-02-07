@@ -237,43 +237,25 @@ let usersList = [
 ];
 
 
-// for (i = 0; i < usersList.length; i++) {
-//     document.write('<div class="card">')
-//     for (let usersListElementKey in usersList[i]) {
-//         if ((usersListElementKey !== 'address') && (usersListElementKey !== 'company')) {
-//             document.write(`<div> ${usersListElementKey} - ${usersList[i][usersListElementKey]} <br></div>`)
-//         } else if (usersListElementKey === 'address') {
-//             for (let j = 0; j < usersListElementKey.length; j++) {
-//                 for (let usersListElementKeyElementKey in usersListElementKey[j]) {
-//                     document.write(`<div> ${usersListElementKeyElementKey} - ${usersListElementKey[j][usersListElementKeyElementKey]} <br></div>`)
-//                 }
-//             }
-//         } else if (usersListElementKey === 'company') {
-//             for (let j = 0; j < usersList[i][usersListElementKey].length; j++) {
-//                 for (let usersListElementKeyElementKey in usersList[i][usersListElementKey][j]) {
-//                     document.write(`<div> ${usersListElementKeyElementKey} - ${usersList[i][usersListElementKey][j][usersListElementKeyElementKey]} <br></div>`)
-//                 }
-//             }
-//         }
-//     }
-//     document.write('</div>')
-// }
-
-
 for (let i = 0; i < usersList.length; i++) {
     document.write('<div class="card">')
-    for (let usersListElementKey in usersList[i]) {
-        if ((usersListElementKey !== 'address') && (usersListElementKey !== 'company')) {
-            document.write(`<div> ${usersListElementKey} - ${usersList[i][usersListElementKey]} <br></div>`)
-        } else if (usersListElementKey === 'address') {
-            for (let usersListElementKeyElementKey in usersList[i][usersListElementKey]) {
-                document.write(`<div> ${usersListElementKeyElementKey} -
-                        ${usersList[i][usersListElementKey][usersListElementKeyElementKey]} <br></div>`)
+    for (let elementUserList in usersList[i]) {
+        if ((elementUserList !== 'address') && (elementUserList !== 'company')) {
+            document.write(`<div> ${elementUserList} - ${usersList[i][elementUserList]} <br></div>`)
+        } else if (elementUserList === 'address') {
+            for (let elementAddress in usersList[i][elementUserList]) {
+                if (elementAddress !== 'geo') {
+                    document.write(`<div> ${elementAddress} - ${usersList[i][elementUserList][elementAddress]} <br></div>`)
+                }else if (elementAddress === 'geo'){
+                    for (let elementGeo in elementAddress) {
+                        document.write(`<div> ${elementGeo} - ${usersList[i][elementUserList][elementAddress][elementGeo]} <br></div>`)
+                    }
+                }
             }
-        } else if (usersListElementKey === 'company') {
-            for (let usersListElementKeyElementKey in usersList[i][usersListElementKey]) {
-                document.write(`<div> ${usersListElementKeyElementKey} -
-                        ${usersList[i][usersListElementKey][usersListElementKeyElementKey]} <br></div>`)
+
+        } else if (elementUserList === 'company') {
+            for (let elementCompany in usersList[i][elementUserList]) {
+                document.write(`<div> ${elementCompany} - ${usersList[i][elementUserList][elementCompany]} <br></div>`)
             }
         }
     }
