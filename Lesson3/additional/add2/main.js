@@ -246,8 +246,8 @@ for (let i = 0; i < usersList.length; i++) {
             for (let elementAddress in usersList[i][elementUserList]) {
                 if (elementAddress !== 'geo') {
                     document.write(`<div> ${elementAddress} - ${usersList[i][elementUserList][elementAddress]} <br></div>`)
-                }else if (elementAddress === 'geo'){
-                    for (let elementGeo in elementAddress) {
+                } else if (elementAddress === 'geo') {
+                    for (let elementGeo in usersList[i][elementUserList][elementAddress]) {
                         document.write(`<div> ${elementGeo} - ${usersList[i][elementUserList][elementAddress][elementGeo]} <br></div>`)
                     }
                 }
