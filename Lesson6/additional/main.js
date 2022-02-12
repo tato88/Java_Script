@@ -130,7 +130,7 @@ let coursesArray = [
 // }
 // document.writeln(count(str, symb)) // 5
 
-// через цикли легше мені це усвідомлювати поки що, тому не одразу дійшло як тут методи запровадити:)))
+// через цикли легше мені це усвідомлювати поки що, тому не одразу дійшло як тут методи запровадити =)))
 
 // let anotherTry = (str, stringsearch) => {
 //     return str.split('').filter((letter) => letter === symb).length
@@ -140,19 +140,21 @@ let coursesArray = [
 
 // - Напишіть функцію cutString(str, n), яка видаляє зайві слова з рядка str, залишивши у ній n слів.
 
-let str = "Сила тяжести приложена к центру масс тела";
-let cutString = (str, n) => {
-    let newStr = []
-    for (let i = 0; i < n; i++) {
-        newStr[i] = str.split(' ')[i]
-    }
-    newStr = newStr.join(' ')
-    return newStr
-}
-document.writeln(cutString(str, 5)) // 'Сила тяжести приложена к центру'
+// let str = "Сила тяжести приложена к центру масс тела";
+// let cutString = (str, n) => {
+//     let newStr = []
+//     for (let i = 0; i < n; i++) {
+//         newStr[i] = str.split(' ')[i]
+//     }
+//     newStr = newStr.join(' ')
+//     return newStr
+// }
+// document.writeln(cutString(str, 5)) // 'Сила тяжести приложена к центру'
 
-let anotherTry = (str, n) =>{
-    let newStr = str.split(' ').slice(0,n).join(' ')
-    return newStr
-}
-document.write(anotherTry(str,5))
+//знову ж таки ... =)))
+
+// let anotherTry = (str, n) =>{
+//     let newStr = str.split(' ').slice(0,n).join(' ')
+//     return newStr
+// }
+// document.write(anotherTry(str,5))
