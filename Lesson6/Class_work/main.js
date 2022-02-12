@@ -78,3 +78,16 @@ let coursesAndDurationArray = [
 
 console.log(coursesAndDurationArray.sort((a, b) => b.monthDuration - a.monthDuration))
 console.log(coursesAndDurationArray.filter((user) => user.monthDuration > 5))
+
+// - Напишите функцию cutString(str, n), которая делит строку на подстроки, состоящие из n символов.
+// document.writeln(cutString('наслаждение',3)) // [нас,лаж,ден,ие]
+
+let cutString = (str, n) => {
+    let newStr = []
+    while (str.length) {
+        newStr.push(str.substr(0, n))
+        str = str.slice(n)
+    }
+    return newStr
+}
+document.writeln(cutString('наслаждение', 3)) // [нас,лаж,ден,ие]
