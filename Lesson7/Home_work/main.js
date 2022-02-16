@@ -1,15 +1,13 @@
 // - Створити функцію конструктор для об'єктів User з полями id, name, surname , email, phone
 // створити пустий масив, наповнити його 10 об'єктами new User(....)
 
-// class User {
-//     constructor(id, name, surname, email, phone) {
+// function User (id, name, surname, email, phone) {
 //         this.id = id;
 //         this.name = name;
 //         this.surname = surname;
 //         this.email = email;
 //         this.phone = phone;
 //     }
-// }
 
 // let user6 = new User(6, "Andrii", "liteplo", "380685013386@ex.ua", "+380685013386")
 // let user1 = new User(1, "Andrii", "liteplo", "380685013386@ex.ua", "+380685013386")
@@ -37,8 +35,7 @@
 // - створити класс для об'єктів Client з полями id, name, surname , email, phone, order (поле є масивом зі списком товарів)
 // створити пустий масив, наповнити його 10 об'єктами Client
 
-class Client {
-    constructor(id, name, surname, email, phone, order) {
+function Client (id, name, surname, email, phone, order) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -46,7 +43,7 @@ class Client {
         this.phone = phone;
         this.order = order;
     }
-}
+
 
 let clients = [
     new Client(1, 'Andrii', 'Liteplo', '380685013386@ex.ua', '+380685013386', ["order1", "order2"]),
