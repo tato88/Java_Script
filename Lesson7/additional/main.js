@@ -117,20 +117,20 @@
 
 // ще такий варіант , якщо фунцію з додаванням у масив запхати в загальний клас тега, але є нюанс :
 
-// class tagObj {
-//     constructor(titleOfTag, action) {
-//         this.titleOfTag = titleOfTag;
-//         this.action = action;
-//         this.attrs = []
-//     }
-//
-//     tagAttrs = function (titleOfAttr, actionOfAttr) {
-//         this.attrs.push({titleOfAttr, actionOfAttr})
-//     }
-// }
-//
-// let tag1 = new tagObj('a', 'Тег <a> является одним из важных элементов HTML и предназначен для создания ссылок.')
-// tag1.tagAttrs('accesskey', 'Активация ссылки с помощью комбинации клавиш.')
-// tag1.tagAttrs('coords', 'Устанавливает координаты активной области.')
-//
-// console.log(tag1) // нюанс : як зробити щоб тут не виводило в консоль функцію як елемент тега?
+class tagObj {
+    constructor(titleOfTag, action) {
+        this.titleOfTag = titleOfTag;
+        this.action = action;
+        this.attrs = []
+    }
+
+    tagAttrs = function (titleOfAttr, actionOfAttr) {
+        this.attrs.push({titleOfAttr, actionOfAttr})
+    }
+}
+
+let tag1 = new tagObj('a', 'Тег <a> является одним из важных элементов HTML и предназначен для создания ссылок.')
+tag1.tagAttrs('accesskey', 'Активация ссылки с помощью комбинации клавиш.')
+tag1.tagAttrs('coords', 'Устанавливает координаты активной области.')
+
+console.log(tag1) // нюанс : як зробити щоб тут не виводило в консоль функцію як елемент тега?
