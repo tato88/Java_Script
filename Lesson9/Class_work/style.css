@@ -1,0 +1,15 @@
+.member {
+    border: 1px solid green;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    width: 400px;
+    box-sizing: border-box;
+}
+.timeDiv{
+    display: flex;
+}
+.monthDiv,.hourDiv{
+    padding: 20px;
+}
