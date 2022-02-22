@@ -71,6 +71,23 @@ let users = [{
 
 // - За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement,
 // розділивши всі властивості по своїм блокам (div>div*4)
+
+// for (let user of users) {
+//     let userBox = document.createElement('div')
+//     document.body.append(userBox)
+//     for (let userElement in user) {
+//         if (typeof (user[userElement]) !== `object`){
+//             let userElementDiv = document.createElement('div')
+//             userElementDiv.innerText = `${userElement} - ${user[userElement]}`
+//             userBox.append(userElementDiv)
+//         }else {
+//             let userElementDiv = document.createElement('div')
+//             userElementDiv.innerText = `${userElement}`
+//             userBox.append(userElementDiv)
+//         }
+//     }
+// }
+
 // - За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement,
 // розділивши всі властивості по своїм блокам , блок з адресою зробити окремим блоком, з блоками для кожної властивості
 
@@ -102,46 +119,74 @@ let users = [{
 //     що знаходиться на сторінці.
 //     Скріпт повинен працювати навіть якщо кількість блоків з заголовком та параграфом зміниться.
 
-
-
-
+// let contentH = document.getElementById('content')
+// let h2List = document.getElementsByTagName('h2')
+// let ul = document.createElement('ul')
+// contentH.append(ul)
+// for (let i = 0; i < h2List.length; i++) {
+//     let li = document.createElement('li')
+//     li.innerText = `${h2List[i].innerText}`
+//     ul.append(li)
+// }
 
 // -Є масив котрий характеризує правила. Створити скрипт який ітерує цей масив, та робить з кожне правило в окремому блоці.
 //     При цому в блоці, номер правила записати в свій блок, текст правила записати в свій окремий блок.
 //     Результатом відпрацювання скріпта повинна бути структура яка міститься в блоці wrap файла rule.html
 
-let rules = [
-    {
-        title: 'Первое правило Бойцовского клуба.',
-        body: 'Никому не рассказывать о Бойцовском клубе.'
-    },
-    {
-        title: 'Второе правило Бойцовского клуба.',
-        body: 'Никогда никому не рассказывать о Бойцовском клубе.'
-    },
-    {
-        title: 'Третье правило Бойцовского клуба.',
-        body: 'В схватке участвуют только двое.'
-    },
-    {
-        title: 'Четвертое правило Бойцовского клуба.',
-        body: 'Не более одного поединка за один раз.'
-    },
-    {
-        title: 'Пятое правило Бойцовского клуба.',
-        body: 'Бойцы сражаются без обуви и голые по пояс.'
-    },
-    {
-        title: 'Шестое правило Бойцовского клуба.',
-        body: 'Поединок продолжается столько, сколько потребуется.'
-    },
-    {
-        title: 'Седьмое правило Бойцовского клуба.',
-        body: 'Если противник потерял сознание или делает вид, что потерял, или говорит «Хватит» — поединок окончен.'
-    },
-    {
-        title: 'Восьмое и последнее правило Бойцовского клуба.',
-        body: 'Новичок обязан принять бой.'
-    },
+// let rules = [
+//     {
+//         title: 'Первое правило Бойцовского клуба.',
+//         body: 'Никому не рассказывать о Бойцовском клубе.'
+//     },
+//     {
+//         title: 'Второе правило Бойцовского клуба.',
+//         body: 'Никогда никому не рассказывать о Бойцовском клубе.'
+//     },
+//     {
+//         title: 'Третье правило Бойцовского клуба.',
+//         body: 'В схватке участвуют только двое.'
+//     },
+//     {
+//         title: 'Четвертое правило Бойцовского клуба.',
+//         body: 'Не более одного поединка за один раз.'
+//     },
+//     {
+//         title: 'Пятое правило Бойцовского клуба.',
+//         body: 'Бойцы сражаются без обуви и голые по пояс.'
+//     },
+//     {
+//         title: 'Шестое правило Бойцовского клуба.',
+//         body: 'Поединок продолжается столько, сколько потребуется.'
+//     },
+//     {
+//         title: 'Седьмое правило Бойцовского клуба.',
+//         body: 'Если противник потерял сознание или делает вид, что потерял, или говорит «Хватит» — поединок окончен.'
+//     },
+//     {
+//         title: 'Восьмое и последнее правило Бойцовского клуба.',
+//         body: 'Новичок обязан принять бой.'
+//     },
+// ];
 
-];
+
+// let rulesList = array => {
+//     let wrap1 = document.createElement('div')
+//     document.body.append(wrap1)
+//     wrap1.classList.add('wrap1')
+//     let classIndex = 1
+//     for (let rule of array) {
+//         let ruleBox = document.createElement('div')
+//         wrap1.append(ruleBox)
+//         ruleBox.classList.add(`rules`)
+//         ruleBox.classList.add(`rule${classIndex}`)
+//         let h2 = document.createElement('h2')
+//         h2.innerText = `${rule.title}`
+//         ruleBox.append(h2)
+//         let p = document.createElement('p')
+//         p.innerText = `${rule.body}`
+//         ruleBox.append(p)
+//         classIndex++
+//     }
+// }
+// rulesList(rules)
+
