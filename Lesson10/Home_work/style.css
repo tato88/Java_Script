@@ -1,0 +1,9 @@
+#text{
+    background: red;
+    width: 100px;
+    height: 100px;
+}
+
+.hidden{
+    display: none;
+}
