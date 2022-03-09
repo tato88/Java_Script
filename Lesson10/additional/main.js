@@ -51,103 +51,74 @@ let usersWithAddress = [
 // 3й - оставляет тех у кого город киев
 // Данные выводить в документ
 
-// for (let user of usersWithAddress) {
-//     let userDiv = document.createElement('div')
-//     userDiv.innerText = `${user.id}. ${user.name} (${user.age}y.o.) - ${user.status} ///  address ${user.address.city}/${user.address.street}/${user.address.number}`
-//     document.getElementById('users').append(userDiv)
-// }
-//
-// let inp1 = document.getElementById('inp1')
-// inp1.onclick = function () {
-//     let newUsers = []
-//     let ul = document.createElement('ul')
-//     document.body.append(ul)
-//     if (inp1.checked) {
-//         for (let user of usersWithAddress) {
-//             if (!user.status) {
-//                 newUsers.push(user)
-//             }
-//         }
-//         for (let i = 0; i < newUsers.length; i++) {
-//             let li = document.createElement('li')
-//             li.innerText = `${newUsers[i].id} - ${newUsers[i].name}`
-//             ul.append(li)
-//         }
-//     } else {
-//         let li = document.querySelectorAll('li');
-//         for (var i = 0, len = li.length; i < len; i++) {
-//             li[i].parentNode.removeChild(li[i]);
-//         }
-//     }
-// }
-// let inp2 = document.getElementById('inp2')
-// inp2.onclick = function () {
-//     let newUsers = []
-//     let ul = document.createElement('ul')
-//     document.body.append(ul)
-//     if (inp2.checked) {
-//         for (let user of usersWithAddress) {
-//             if (user.age > 28) {
-//                 newUsers.push(user)
-//             }
-//         }
-//         for (let i = 0; i < newUsers.length; i++) {
-//             let li = document.createElement('li')
-//             li.innerText = `${newUsers[i].id} - ${newUsers[i].name}`
-//             ul.append(li)
-//         }
-//     } else {
-//         let li = document.querySelectorAll('li');
-//         for (var i = 0, len = li.length; i < len; i++) {
-//             li[i].parentNode.removeChild(li[i]);
-//         }
-//     }
-// }
-// let inp3 = document.getElementById('inp3')
-// inp3.onclick = function () {
-//     let newUsers = []
-//     let ul = document.createElement('ul')
-//     document.body.append(ul)
-//     if (inp3.checked) {
-//         for (let user of usersWithAddress) {
-//             if (user.address.city === 'Kyiv') {
-//                 newUsers.push(user)
-//             }
-//         }
-//         for (let i = 0; i < newUsers.length; i++) {
-//             let li = document.createElement('li')
-//             li.innerText = `${newUsers[i].id} - ${newUsers[i].name}`
-//             ul.append(li)
-//         }
-//     } else {
-//         let li = document.querySelectorAll('li');
-//         for (var i = 0, len = li.length; i < len; i++) {
-//             li[i].parentNode.removeChild(li[i]);
-//         }
-//     }
-// }
-// let butMix = document.createElement('button')
-// butMix.innerText = 'mix filters'
-// document.body.append(butMix)
-// butMix.addEventListener('click', (e) => {
-//     let newUsers = []
-//     let ul = document.createElement('ul')
-//     document.body.append(ul)
-//     if (e) {
-//         for (let user of usersWithAddress) {
-//             if ((!user.status)&&(user.age > 28)&&(user.address.city === 'Kyiv')) {
-//                 newUsers.push(user)
-//             }
-//         }
-//         for (let i = 0; i < newUsers.length; i++) {
-//             let li = document.createElement('li')
-//             li.innerText = `${newUsers[i].id} - ${newUsers[i].name}`
-//             ul.append(li)
-//         }
-//     }
-// }
-// )
 
+let inpFalse = document.getElementById('inp1')
+let inp29 = document.getElementById('inp2')
+let inpKyiv = document.getElementById('inp3')
+
+
+let show = document.createElement('ul')
+inpFalse.onclick = function () {
+    let li = document.querySelectorAll('li');
+    for (let i = 0, len = li.length; i < len; i++) {
+        li[i].parentNode.removeChild(li[i]);
+    }
+    if (inpFalse.checked) {
+        for (let user of usersWithAddress.filter(user => user.status === false)) {
+            let li = document.createElement('li')
+            li.innerText = `${user.name}`
+            show.append(li)
+        }
+    } else {
+
+        for (let user of usersWithAddress) {
+            let li = document.createElement('li')
+            li.innerText = `${user.name}`
+            show.append(li)
+        }
+    }
+}
+inp29.onclick = function () {
+    let li = document.querySelectorAll('li');
+    for (let i = 0, len = li.length; i < len; i++) {
+        li[i].parentNode.removeChild(li[i]);
+    }
+    if (inp29.checked) {
+        for (let user of usersWithAddress.filter(user => user.age > 28)) {
+            let li = document.createElement('li')
+            li.innerText = `${user.name}`
+            show.append(li)
+        }
+    } else {
+
+        for (let user of usersWithAddress) {
+            let li = document.createElement('li')
+            li.innerText = `${user.name}`
+            show.append(li)
+        }
+    }
+}
+inpKyiv.onclick = function () {
+    let li = document.querySelectorAll('li');
+    for (let i = 0, len = li.length; i < len; i++) {
+        li[i].parentNode.removeChild(li[i]);
+    }
+    if (inpKyiv.checked) {
+        for (let user of usersWithAddress.filter(user => user.address.city === 'Kyiv')) {
+            let li = document.createElement('li')
+            li.innerText = `${user.name}`
+            show.append(li)
+        }
+    } else {
+
+        for (let user of usersWithAddress) {
+            let li = document.createElement('li')
+            li.innerText = `${user.name}`
+            show.append(li)
+        }
+    }
+}
+document.body.append(show)
 
 // - Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
 
