@@ -63,86 +63,87 @@ for (let user of newArray) {
     userDiv.innerText = `${user.id},${user.name},${user.age},${user.status},${user.address.city},${user.address.street},${user.address.number}`
     userBox.append(userDiv)
 }
-let functionFalse = () => {
-    if (inpFalse.checked) {
-        oldDiv = userBox.querySelectorAll('div');
-        for (let i = 0, len = oldDiv.length; i < len; i++) {
-            oldDiv[i].parentNode.removeChild(oldDiv[i]);
+
+    let functionFalse = () => {
+        if (inpFalse.checked) {
+            oldDiv = userBox.querySelectorAll('div');
+            for (let i = 0, len = oldDiv.length; i < len; i++) {
+                oldDiv[i].parentNode.removeChild(oldDiv[i]);
+            }
+            newArray = newArray.filter(value => !value.status)
+            for (let user of newArray) {
+                let userDiv = document.createElement('div')
+                userDiv.innerText = `${user.id},${user.name},${user.age},${user.status},${user.address.city},${user.address.street},${user.address.number}`
+                userBox.append(userDiv)
+            }
         }
-        newArray = usersWithAddress.filter(value => !value.status)
-        for (let user of newArray) {
-            let userDiv = document.createElement('div')
-            userDiv.innerText = `${user.id},${user.name},${user.age},${user.status},${user.address.city},${user.address.street},${user.address.number}`
-            userBox.append(userDiv)
+        if ((!inpFalse.checked)&&(!inp29.checked)&&(!inpKyiv.checked)) {
+            oldDiv = userBox.querySelectorAll('div');
+            for (let i = 0, len = oldDiv.length; i < len; i++) {
+                oldDiv[i].parentNode.removeChild(oldDiv[i]);
+            }
+            newArray = usersWithAddress
+            for (let user of newArray) {
+                let userDiv = document.createElement('div')
+                userDiv.innerText = `${user.id},${user.name},${user.age},${user.status},${user.address.city},${user.address.street},${user.address.number}`
+                userBox.append(userDiv)
+            }
+        }
+
+    }
+    let function29 = () => {
+        if (inp29.checked) {
+            oldDiv = userBox.querySelectorAll('div');
+            for (let i = 0, len = oldDiv.length; i < len; i++) {
+                oldDiv[i].parentNode.removeChild(oldDiv[i]);
+            }
+            newArray = newArray.filter(value => value.age > 28)
+            for (let user of newArray) {
+                let userDiv = document.createElement('div')
+                userDiv.innerText = `${user.id},${user.name},${user.age},${user.status},${user.address.city},${user.address.street},${user.address.number}`
+                userBox.append(userDiv)
+            }
+        }
+        if ((!inp29.checked)&&(!inpFalse.checked)&&(!inpKyiv.checked)) {
+            oldDiv = userBox.querySelectorAll('div');
+            for (let i = 0, len = oldDiv.length; i < len; i++) {
+                oldDiv[i].parentNode.removeChild(oldDiv[i]);
+            }
+            newArray = usersWithAddress
+            for (let user of newArray) {
+                let userDiv = document.createElement('div')
+                userDiv.innerText = `${user.id},${user.name},${user.age},${user.status},${user.address.city},${user.address.street},${user.address.number}`
+                userBox.append(userDiv)
+            }
         }
     }
-    if (!inpFalse.checked) {
-        oldDiv = userBox.querySelectorAll('div');
-        for (let i = 0, len = oldDiv.length; i < len; i++) {
-            oldDiv[i].parentNode.removeChild(oldDiv[i]);
+    let functionKyiv = () => {
+        if (inpKyiv.checked) {
+            oldDiv = userBox.querySelectorAll('div');
+            for (let i = 0, len = oldDiv.length; i < len; i++) {
+                oldDiv[i].parentNode.removeChild(oldDiv[i]);
+            }
+            newArray = newArray.filter(value => value.address.city === 'Kyiv')
+            for (let user of newArray) {
+                let userDiv = document.createElement('div')
+                userDiv.innerText = `${user.id},${user.name},${user.age},${user.status},${user.address.city},${user.address.street},${user.address.number}`
+                userBox.append(userDiv)
+            }
         }
-        newArray = usersWithAddress
-        for (let user of newArray) {
-            let userDiv = document.createElement('div')
-            userDiv.innerText = `${user.id},${user.name},${user.age},${user.status},${user.address.city},${user.address.street},${user.address.number}`
-            userBox.append(userDiv)
+        if ((!inpKyiv.checked)&&(!inp29.checked)&&(!inpFalse.checked)) {
+            oldDiv = userBox.querySelectorAll('div');
+            for (let i = 0, len = oldDiv.length; i < len; i++) {
+                oldDiv[i].parentNode.removeChild(oldDiv[i]);
+            }
+            newArray = usersWithAddress
+            for (let user of newArray) {
+                let userDiv = document.createElement('div')
+                userDiv.innerText = `${user.id},${user.name},${user.age},${user.status},${user.address.city},${user.address.street},${user.address.number}`
+                userBox.append(userDiv)
+            }
         }
-    }
 
 }
-let function29 = () => {
-    if (inp29.checked) {
-        oldDiv = userBox.querySelectorAll('div');
-        for (let i = 0, len = oldDiv.length; i < len; i++) {
-            oldDiv[i].parentNode.removeChild(oldDiv[i]);
-        }
-        newArray = usersWithAddress.filter(value => value.age > 28)
-        for (let user of newArray) {
-            let userDiv = document.createElement('div')
-            userDiv.innerText = `${user.id},${user.name},${user.age},${user.status},${user.address.city},${user.address.street},${user.address.number}`
-            userBox.append(userDiv)
-        }
-    }
-    if (!inp29.checked) {
-        oldDiv = userBox.querySelectorAll('div');
-        for (let i = 0, len = oldDiv.length; i < len; i++) {
-            oldDiv[i].parentNode.removeChild(oldDiv[i]);
-        }
-        newArray = usersWithAddress
-        for (let user of newArray) {
-            let userDiv = document.createElement('div')
-            userDiv.innerText = `${user.id},${user.name},${user.age},${user.status},${user.address.city},${user.address.street},${user.address.number}`
-            userBox.append(userDiv)
-        }
-    }
-}
-let functionKyiv = () => {
-    if (inpKyiv.checked) {
-        oldDiv = userBox.querySelectorAll('div');
-        for (let i = 0, len = oldDiv.length; i < len; i++) {
-            oldDiv[i].parentNode.removeChild(oldDiv[i]);
-        }
-        newArray = usersWithAddress.filter(value => value.address.city === 'Kyiv')
-        for (let user of newArray) {
-            let userDiv = document.createElement('div')
-            userDiv.innerText = `${user.id},${user.name},${user.age},${user.status},${user.address.city},${user.address.street},${user.address.number}`
-            userBox.append(userDiv)
-        }
-    }
-    if (!inpKyiv.checked) {
-        oldDiv = userBox.querySelectorAll('div');
-        for (let i = 0, len = oldDiv.length; i < len; i++) {
-            oldDiv[i].parentNode.removeChild(oldDiv[i]);
-        }
-        newArray = usersWithAddress
-        for (let user of newArray) {
-            let userDiv = document.createElement('div')
-            userDiv.innerText = `${user.id},${user.name},${user.age},${user.status},${user.address.city},${user.address.street},${user.address.number}`
-            userBox.append(userDiv)
-        }
-    }
-}
-
 
 
 // - Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
