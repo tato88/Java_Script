@@ -29,3 +29,12 @@
     left: 50px;
     margin: 20px;
 }
+.stair{
+    border: 1px solid gray;
+    margin: 5px;
+}
+.stair-chld{
+    border: 1px solid gray;
+    margin: 5px;
+    margin-left: 10px;
+}

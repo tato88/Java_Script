@@ -186,8 +186,59 @@
 // при нажатии вперед, вы переходите к дочернему элементу, при еще одном нажатии на "вперед", вы переходите к следующему дочернему элементу (лежащему на одном уровне)
 // НО если у (какого-либо)дочеренего элемента есть дети, то нажатие "вперед" позволяет нам войти внутрь элемента и  выводит первого ребенка. и тд.
 //     Когда все дети заканчиваются, мы выходим из данного дочернего элемента и переходим к следующему, лежащему с ним на одном уровне
+
+// let arrayOfItems = []
+// let allItems = document.body.children
+// console.log(allItems);
+// let form = document.createElement('form')
+// let butBack = document.createElement('button')
+// let butNext = document.createElement('button')
+// butBack.innerText = 'BACK'
+// butNext.innerText = 'NEXT'
+// document.body.append(form)
+// form.append(butBack)
+// form.append(butNext)
+// let marker = 0
+// let findItems = (array) => {
+//     for (let element of array) {
+//         arrayOfItems.push(element)
+//         findItems(element.children)
+//     }
+// }
+// findItems(allItems)
+// let killDiv = document.createElement('div')
+// killDiv.id = 'id'
+// document.body.append(killDiv)
+// butNext.addEventListener('click', e => {
+//         e.preventDefault()
+//         let killDiv = document.getElementById('id')
+//         killDiv.parentNode.removeChild(killDiv)
+//         let div = document.createElement('div')
+//         div.id = 'id'
+//         div.innerHTML = `tag: ${arrayOfItems[marker].tagName} /// classes: ${arrayOfItems[marker].classList} /// id: ${arrayOfItems[marker].id} /// text: ${arrayOfItems[marker].innerText} `
+//         document.body.append(div)
+//         if (marker < arrayOfItems.length - 1) {
+//             marker += 1
+//         } else marker = 0
+//     }
+// )
+// butBack.addEventListener('click', e => {
+//         e.preventDefault()
+//         let killDiv = document.getElementById('id')
+//         killDiv.parentNode.removeChild(killDiv)
+//         if (marker > 0) {
+//             --marker
+//         } else marker = arrayOfItems.length - 1
+//         let div = document.createElement('div')
+//         div.id = 'id'
+//         div.innerHTML = `tag: ${arrayOfItems[marker].tagName} , classes: ${arrayOfItems[marker].classList} , id: ${arrayOfItems[marker].id}`
+//         document.body.append(div)
+//
+//     }
+// )
+
 let arrayOfItems = []
-let allItems = document.body.children
+let allItems = document.getElementsByClassName('stair')
 console.log(allItems);
 let form = document.createElement('form')
 let butBack = document.createElement('button')
@@ -205,33 +256,32 @@ let findItems = (array) => {
     }
 }
 findItems(allItems)
-let killDiv = document.createElement('div')
-killDiv.id = 'id'
-document.body.append(killDiv)
 butNext.addEventListener('click', e => {
         e.preventDefault()
-        let killDiv = document.getElementById('id')
-        killDiv.parentNode.removeChild(killDiv)
-        let div = document.createElement('div')
-        div.id = 'id'
-        div.innerHTML = `tag: ${arrayOfItems[marker].tagName} /// classes: ${arrayOfItems[marker].classList} /// id: ${arrayOfItems[marker].id} /// text: ${arrayOfItems[marker].innerText} `
-        document.body.append(div)
         if (marker < arrayOfItems.length - 1) {
             marker += 1
         } else marker = 0
+
+        arrayOfItems[marker].style.background = 'red'
+        if (marker !== 0) {
+            arrayOfItems[marker - 1].style.background = 'none'
+        } else {
+            arrayOfItems[arrayOfItems.length - 1].style.background = 'none'
+        }
     }
 )
 butBack.addEventListener('click', e => {
         e.preventDefault()
-        let killDiv = document.getElementById('id')
-        killDiv.parentNode.removeChild(killDiv)
         if (marker > 0) {
             --marker
         } else marker = arrayOfItems.length - 1
-        let div = document.createElement('div')
-        div.id = 'id'
-        div.innerHTML = `tag: ${arrayOfItems[marker].tagName} , classes: ${arrayOfItems[marker].classList} , id: ${arrayOfItems[marker].id}`
-        document.body.append(div)
 
+        arrayOfItems[marker].style.background = 'red'
+        if (marker !== arrayOfItems.length - 1) {
+            arrayOfItems[marker + 1].style.background = 'none'
+        } else {
+            arrayOfItems[0].style.background = 'none'
+        }
     }
 )
+
