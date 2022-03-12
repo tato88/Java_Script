@@ -1,0 +1,37 @@
+.users {
+}
+
+.user {
+    border: 1px solid gray;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.user {
+    background: lightgray;
+    color: blueviolet;
+}
+
+.user > h2 {
+    color: cornflowerblue;
+}
+
+.user > p {
+    color: cadetblue;
+}
+
+.post {
+    background: green;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    color: black;
+}
+
+.comment {
+    background: blueviolet;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    color: yellow;
+}
