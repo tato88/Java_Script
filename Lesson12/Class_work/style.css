@@ -1,0 +1,57 @@
+.posts {
+    display: grid;
+    grid-template: repeat(5, 1fr) / repeat(5, 1fr)
+}
+
+.post {
+    color: lightgoldenrodyellow;
+    background: gray;
+    border: 1px solid cornflowerblue;
+    margin: 10px;
+    width: 250px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.posts {
+}
+
+.box {
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin: 10px;
+    background: lightgoldenrodyellow;
+    padding: 20px;
+
+}
+
+.box > h3 {
+    border: 1px solid cadetblue;
+    border-radius: 10px;
+    padding-left: 15px;
+    color: blueviolet;
+}
+.box > span {
+    display: flex;
+    justify-content: end;
+    color: gray;
+}
+.box > p {
+    background: cadetblue;
+    color: white;
+    padding: 5px;
+}
+.comments{
+    width: 230px;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 10px;
+    text-align: center;
+    justify-content: center;
+}
+.comments > p{
+    color: yellowgreen;
+}
+.comments > h3{
+    color: wheat;
+}
