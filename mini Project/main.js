@@ -4,10 +4,13 @@ fetch('https://jsonplaceholder.typicode.com/users')
         console.log(data);
         let usersBox = document.createElement('div')
         document.body.append(usersBox)
-        usersBox.classList.add('userBox')
+        usersBox.classList.add('usersBox')
         for (let user of data) {
             let userBox = document.createElement('div')
-            userBox.innerText = user.id
+            userBox.classList.add('userBox')
+            userBox.innerHTML = `
+            <div>${user.id}. ${user.name}</div>
+            `
             usersBox.append(userBox)
             let but = document.createElement('button')
             but.innerText = 'User Info'

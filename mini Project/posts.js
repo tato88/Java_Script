@@ -26,10 +26,11 @@ fetch('https://jsonplaceholder.typicode.com/posts/' + postId + '/comments')
         console.log(data)
         for (let comment of data) {
             let commentBox = document.createElement('div')
+            commentBox.classList.add('comment')
             commentBox.innerHTML = `
             <h3>${comment.name}</h3>
             <p>commentId: ${comment.id}</p>
-            <p>email: ${comment.id}</p>
+            <p>email: ${comment.email}</p>
             <div>${comment.body}</div>
         `
             commentsBox.append(commentBox)

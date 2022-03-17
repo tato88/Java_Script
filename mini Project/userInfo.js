@@ -31,6 +31,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
 //кнопка виклику тайтлів до постів
         let butPosts = document.createElement('button')
         butPosts.innerText = 'posts of current user'
+        butPosts.classList.add('butPosts')
         butPosts.onclick = function () {
 
             fetch('https://jsonplaceholder.typicode.com/users/' + userId + '/posts')
@@ -43,22 +44,24 @@ fetch('https://jsonplaceholder.typicode.com/users')
                         postBox.addEventListener('click',e => {
                             localStorage.setItem('postId', post.id)
                         })
+                        postBox.classList.add('postBox1')
                         postsBox.append(postBox)
                     }
                     document.body.append(postsBox)
                 })
         }
 
-
-//кнопка для повернення на головну
+//кнопка для повернення на головну чисто потренуватись
         let butBack = document.createElement('button')
         butBack.innerText = 'Back to Users'
+        butBack.classList.add('butBack')
         butBack.onclick = function () {
             history.back()
         }
+        document.body.append(butBack)
+
 
         infoDiv.append(butPosts)
-        infoDiv.append(butBack)
         userInfo.append(infoDiv)
 
     })

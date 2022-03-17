@@ -1,0 +1,72 @@
+.usersBox {
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr)
+}
+
+.userBox {
+    text-align: center;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.butPosts {
+    width: 90%;
+    margin: 20px;
+}
+
+.butBack {
+    margin: 10px;
+}
+
+#postsBox {
+    display: grid;
+    grid-template: repeat(5, 1fr) / repeat(5, 1fr)
+}
+.postBox1{
+    margin: 20px;
+}
+
+#posts {
+    width: 400px;
+    margin: 20px;
+    background: yellowgreen;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.post > h3 {
+    color: lightgoldenrodyellow;
+}
+
+.post > p {
+    color: lightgray;
+}
+
+.post > div {
+    color: yellow;
+}
+
+#comments {
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(4, 1fr)
+}
+
+.comment {
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background: gray;
+    padding: 10px;
+}
+
+.comment > h3 {
+    color: white;
+}
+
+.comment > p {
+    color: lightgray;
+}
+
+.comment > div {
+    color: yellowgreen;
+}
