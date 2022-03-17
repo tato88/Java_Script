@@ -28,11 +28,36 @@ fetch('https://jsonplaceholder.typicode.com/users')
             </div>
 
             `
+//кнопка виклику тайтлів до постів
+        let butPosts = document.createElement('button')
+        butPosts.innerText = 'posts of current user'
+        butPosts.onclick = function () {
+
+            fetch('https://jsonplaceholder.typicode.com/users/' + userId + '/posts')
+                .then(value => value.json())
+                .then(data => {
+                    let postsBox = document.getElementById('postsBox')
+                    for (let post of data) {
+                        let postBox = document.createElement('div')
+                        postBox.innerHTML = `<a href="post-details.html">${post.title}</a>`
+                        postBox.addEventListener('click',e => {
+                            localStorage.setItem('postId', post.id)
+                        })
+                        postsBox.append(postBox)
+                    }
+                    document.body.append(postsBox)
+                })
+        }
+
+
+//кнопка для повернення на головну
         let butBack = document.createElement('button')
-        butBack.innerText='Back to Users'
-        butBack.onclick = function (){
+        butBack.innerText = 'Back to Users'
+        butBack.onclick = function () {
             history.back()
         }
+
+        infoDiv.append(butPosts)
         infoDiv.append(butBack)
         userInfo.append(infoDiv)
 
