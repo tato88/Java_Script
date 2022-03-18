@@ -14,11 +14,18 @@ let products = [
     {id: 2, title: 'Porsche', price: '40000', img: 'img/porsche.png'},
     {id: 3, title: 'BMW', price: '35000', img: 'img/x5.png'}
 ]
-// let img = document.createElement('img')
-// img.src=products[0].img
-// document.body.append(img)
+
 let productsBox = document.getElementsByClassName('products')[0]
-let cartBox = localStorage.getItem('cart') || []
+let cartBox = JSON.parse(localStorage.getItem('cart')) || []
+
+//cart button
+let butCart = document.createElement('button')
+butCart.classList.add('butCart')
+butCart.innerHTML = `<strong>CART ${cartBox.length}</strong>`
+butCart.onclick = function (e) {
+    window.location.href = "list.html"
+}
+
 for (let product of products) {
     let productBox = document.createElement('div')
     let title = document.createElement('h3')
@@ -30,28 +37,30 @@ for (let product of products) {
     productBox.append(img)
 
     let butFrom = document.createElement('form')
-
-
+//buy button
     let butBuy = document.createElement('button')
     butBuy.innerHTML = 'add to cart'
     butBuy.onclick = function (e) {
         e.preventDefault();
-        cartBox.push(product.id)
         console.log(cartBox)
+        cartBox.push(product.id)
         localStorage.setItem('cart', JSON.stringify(cartBox))
+        butCart.innerHTML = `<strong>CART ${cartBox.length}</strong>`
     }
     butFrom.append(butBuy)
-
+//delete from cart button
     let butDeleteFromCart = document.createElement('button')
-    butDeleteFromCart.innerHTML = 'delete from cart'
+    butDeleteFromCart.innerHTML = `remove from cart`
     butDeleteFromCart.onclick = function (e) {
         e.preventDefault();
-
+        if (cartBox.includes(product.id)) {
+            cartBox.splice((cartBox.indexOf(product.id)), 1)
+        }
+        localStorage.setItem('cart', JSON.stringify(cartBox))
+        butCart.innerHTML = `<strong>CART ${cartBox.length}</strong>`
     }
     butFrom.append(butDeleteFromCart)
-
     productBox.append(butFrom)
-
-
     productsBox.append(productBox)
+    document.body.append(butCart)
 }
