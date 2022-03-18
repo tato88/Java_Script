@@ -9,7 +9,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
             <h2>${data[userId - 1].name}</h2>
             <h3>username:${data[userId - 1].username}</h3>
             <p>email: ${data[userId - 1].email}</p>
-            <div class="address">
+            <div class="address">address:
                 <div>city:${data[userId - 1].address.city}</div>
                 <div>street:${data[userId - 1].address.street}</div>
                 <div>suite:${data[userId - 1].address.suite}</div>

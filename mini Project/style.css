@@ -24,6 +24,11 @@
 }
 .postBox1{
     margin: 20px;
+    border: 1px dashed gray;
+}
+.postBox1>a{
+    text-decoration: none;
+    cursor: pointer;
 }
 
 #posts {
