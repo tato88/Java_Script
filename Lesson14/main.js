@@ -38,9 +38,8 @@
 // }
 // schedule()
 
-// promise
-// не розумію чому між першим і другим виведенням пауза така, як встановив (2000) реально, а між другим і третім виведенням різниця в таймаутах (1000)
-// чому в одній і тій же ситуації відпрацьовує по різному?
+// promise???
+
 let todo = ['7:00 wake up', '8:00 breakfast', '9:00 work', '13:00 dinner', '18:00 go home', '19:00 bath room', '20:00 youtube', '22:00 sleep']
 let counter = 0
 new Promise((resolve, reject) => {
@@ -50,6 +49,15 @@ new Promise((resolve, reject) => {
         resolve(counter)
     }, 1000)
 })
+    .then(value => {
+        setTimeout(() => {
+            return new Promise((resolve, reject) => {
+                console.log(todo[counter])
+                counter += 1
+                resolve(counter)
+            })
+        }, 1000)
+    })
     .then(value => {
         setTimeout(() => {
             return new Promise((resolve, reject) => {
@@ -67,4 +75,40 @@ new Promise((resolve, reject) => {
                 resolve(counter)
             })
         }, 3000)
+    })
+    .then(value => {
+        setTimeout(() => {
+            return new Promise((resolve, reject) => {
+                console.log(todo[counter])
+                counter += 1
+                resolve(counter)
+            })
+        }, 4000)
+    })
+    .then(value => {
+        setTimeout(() => {
+            return new Promise((resolve, reject) => {
+                console.log(todo[counter])
+                counter += 1
+                resolve(counter)
+            })
+        }, 5000)
+    })
+    .then(value => {
+        setTimeout(() => {
+            return new Promise((resolve, reject) => {
+                console.log(todo[counter])
+                counter += 1
+                resolve(counter)
+            })
+        }, 6000)
+    })
+    .then(value => {
+        setTimeout(() => {
+            return new Promise((resolve, reject) => {
+                console.log(todo[counter])
+                counter += 1
+                resolve(counter)
+            })
+        }, 7000)
     })
