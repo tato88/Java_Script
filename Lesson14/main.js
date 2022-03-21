@@ -40,75 +40,103 @@
 
 // promise???
 
+// let todo = ['7:00 wake up', '8:00 breakfast', '9:00 work', '13:00 dinner', '18:00 go home', '19:00 bath room', '20:00 youtube', '22:00 sleep']
+// let counter = 0
+// new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         console.log(todo[counter])
+//         counter += 1
+//         resolve(counter)
+//     }, 1000)
+// })
+//     .then(value => {
+//         setTimeout(() => {
+//             return new Promise((resolve, reject) => {
+//                 console.log(todo[counter])
+//                 counter += 1
+//                 resolve(counter)
+//             })
+//         }, 1000)
+//     })
+//     .then(value => {
+//         setTimeout(() => {
+//             return new Promise((resolve, reject) => {
+//                 console.log(todo[counter])
+//                 counter += 1
+//                 resolve(counter)
+//             })
+//         }, 2000)
+//     })
+//     .then(value => {
+//         setTimeout(() => {
+//             return new Promise((resolve, reject) => {
+//                 console.log(todo[counter])
+//                 counter += 1
+//                 resolve(counter)
+//             })
+//         }, 3000)
+//     })
+//     .then(value => {
+//         setTimeout(() => {
+//             return new Promise((resolve, reject) => {
+//                 console.log(todo[counter])
+//                 counter += 1
+//                 resolve(counter)
+//             })
+//         }, 4000)
+//     })
+//     .then(value => {
+//         setTimeout(() => {
+//             return new Promise((resolve, reject) => {
+//                 console.log(todo[counter])
+//                 counter += 1
+//                 resolve(counter)
+//             })
+//         }, 5000)
+//     })
+//     .then(value => {
+//         setTimeout(() => {
+//             return new Promise((resolve, reject) => {
+//                 console.log(todo[counter])
+//                 counter += 1
+//                 resolve(counter)
+//             })
+//         }, 6000)
+//     })
+//     .then(value => {
+//         setTimeout(() => {
+//             return new Promise((resolve, reject) => {
+//                 console.log(todo[counter])
+//                 counter += 1
+//                 resolve(counter)
+//             })
+//         }, 7000)
+//     })
+
 let todo = ['7:00 wake up', '8:00 breakfast', '9:00 work', '13:00 dinner', '18:00 go home', '19:00 bath room', '20:00 youtube', '22:00 sleep']
 let counter = 0
-new Promise((resolve, reject) => {
-    setTimeout(() => {
-        console.log(todo[counter])
-        counter += 1
-        resolve(counter)
-    }, 1000)
-})
-    .then(value => {
+let timing = 1000
+function schedule() {
+   return  new Promise((resolve, reject) => {
         setTimeout(() => {
-            return new Promise((resolve, reject) => {
-                console.log(todo[counter])
-                counter += 1
-                resolve(counter)
-            })
-        }, 1000)
+            console.log(timing)
+            console.log(todo[counter])
+            counter += 1
+            timing += 1000
+            resolve(timing)
+        }, timing)
     })
-    .then(value => {
-        setTimeout(() => {
-            return new Promise((resolve, reject) => {
-                console.log(todo[counter])
-                counter += 1
-                resolve(counter)
-            })
-        }, 2000)
-    })
-    .then(value => {
-        setTimeout(() => {
-            return new Promise((resolve, reject) => {
-                console.log(todo[counter])
-                counter += 1
-                resolve(counter)
-            })
-        }, 3000)
-    })
-    .then(value => {
-        setTimeout(() => {
-            return new Promise((resolve, reject) => {
-                console.log(todo[counter])
-                counter += 1
-                resolve(counter)
-            })
-        }, 4000)
-    })
-    .then(value => {
-        setTimeout(() => {
-            return new Promise((resolve, reject) => {
-                console.log(todo[counter])
-                counter += 1
-                resolve(counter)
-            })
-        }, 5000)
-    })
-    .then(value => {
-        setTimeout(() => {
-            return new Promise((resolve, reject) => {
-                console.log(todo[counter])
-                counter += 1
-                resolve(counter)
-            })
-        }, 6000)
-    })
-    .then(value => {
-        setTimeout(() => {
-            return new Promise((resolve, reject) => {
-                console.log(todo[counter])
-                counter += 1
-                resolve(counter)
-            })
-        }, 7000)
-    })
+}
+
+async function scheduleOn() {
+    await schedule()
+    await schedule()
+    await schedule()
+    await schedule()
+    await schedule()
+    await schedule()
+    await schedule()
+    await schedule()
+
+}
+scheduleOn()
