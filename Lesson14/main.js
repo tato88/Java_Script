@@ -115,16 +115,14 @@
 
 let todo = ['7:00 wake up', '8:00 breakfast', '9:00 work', '13:00 dinner', '18:00 go home', '19:00 bath room', '20:00 youtube', '22:00 sleep']
 let counter = 0
-let timing = 1000
+
 function schedule() {
-   return  new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
         setTimeout(() => {
-            console.log(timing)
             console.log(todo[counter])
             counter += 1
-            timing += 1000
-            resolve(timing)
-        }, timing)
+            resolve(counter)
+        }, 1000)
     })
 }
 
@@ -139,4 +137,7 @@ async function scheduleOn() {
     await schedule()
 
 }
+
 scheduleOn()
+
+
