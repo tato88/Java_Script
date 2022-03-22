@@ -119,23 +119,33 @@ let counter = 0
 function schedule() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            console.log(todo[counter])
-            counter += 1
-            resolve(counter)
+            if (counter < todo.length) {
+                console.log(todo[counter])
+                counter += 1
+                resolve(counter)
+            } else {
+                reject('something gonna wrong')
+
+            }
         }, 1000)
     })
 }
 
 async function scheduleOn() {
-    await schedule()
-    await schedule()
-    await schedule()
-    await schedule()
-    await schedule()
-    await schedule()
-    await schedule()
-    await schedule()
-
+    try {
+        await schedule()
+        await schedule()
+        await schedule()
+        await schedule()
+        await schedule()
+        await schedule()
+        await schedule()
+        await schedule()
+        await schedule()
+    } catch
+        (e) {
+        console.error(e)
+    }
 }
 
 scheduleOn()
